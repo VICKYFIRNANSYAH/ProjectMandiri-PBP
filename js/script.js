@@ -15,17 +15,28 @@ btnBuka.addEventListener("click", () => {
 btnMusik.addEventListener("click", () => {
     if (musikJalan) {
         musik.pause();
-        musikJalan = false;
-        btnMusik.innerHTML = '<i class="bi bi-play-fill"></i>';
     } else {
         putarMusik();
     }
 });
 
-function putarMusik() {
-    musik.play();
+musik.addEventListener("play", () => {
     musikJalan = true;
-    btnMusik.innerHTML = '<i class="bi bi-pause-fill"></i>';
+    btnMusik.innerHTML = '<i class="bi bi-pause-fill fs-5"></i>';
+});
+
+musik.addEventListener("pause", () => {
+    musikJalan = false;
+    btnMusik.innerHTML = '<i class="bi bi-play-fill fs-5"></i>';
+});
+
+function putarMusik() {
+    const playPromise = musik.play();
+    if (playPromise !== undefined) {
+        playPromise.catch((err) => {
+            console.log("Audio play dicegah atau menunggu interaksi:", err);
+        });
+    }
 }
 
 // ===== 2. COUNTDOWN =====
