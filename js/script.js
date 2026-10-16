@@ -1,4 +1,4 @@
-// ===== 1. BUKA UNDANGAN & MUSIK =====
+// Buka undangan dan kontrol audio
 const cover = document.getElementById("cover");
 const btnBuka = document.getElementById("btn-buka");
 const btnMusik = document.getElementById("btn-musik");
@@ -39,7 +39,7 @@ function putarMusik() {
     }
 }
 
-// ===== 2. COUNTDOWN =====
+// Hitung mundur tanggal pernikahan
 const tanggalAcara = new Date(2026, 11, 12, 8, 0); // bulan 0-11, jadi 11 = Desember
 
 function hitungMundur() {
@@ -63,12 +63,12 @@ function hitungMundur() {
 hitungMundur();
 setInterval(hitungMundur, 1000);
 
-// ===== 3. TANDA KASIH =====
+// Salin nomor rekening
 function salinRekening(bank, nomor) {
     alert("Nomor rekening " + bank + ": " + nomor);
 }
 
-// ===== 4. RSVP & BUKU TAMU =====
+// Data ucapan dan RSVP
 // Array of object berisi ucapan tamu
 let daftarUcapan = [
     { nama: "Fikri Ramadhan", status: "Hadir", pesan: "Barakallahu lakum! Semoga sakinah mawaddah warahmah." },

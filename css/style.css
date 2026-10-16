@@ -81,6 +81,8 @@ header {
     border-radius: 50%;
     object-fit: cover;
     border: 0.25rem solid #e6c875;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Efek hover kartu */
