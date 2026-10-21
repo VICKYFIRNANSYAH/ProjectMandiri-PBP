@@ -63,16 +63,20 @@ function hitungMundur() {
 hitungMundur();
 setInterval(hitungMundur, 1000);
 
-// Salin nomor rekening
-function salinRekening(bank, nomor) {
-    alert("Nomor rekening " + bank + ": " + nomor);
+// Salin nomor rekening atau kode pembayaran digital
+function salinRekening(label, nomor) {
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(nomor);
+    }
+    const info = label.toUpperCase() === "NMID" ? "NMID: " : "Nomor rekening " + label + ": ";
+    alert(info + nomor + "\n(Berhasil disalin ke clipboard)");
 }
 
 // Data ucapan dan RSVP
 // Array of object berisi ucapan tamu
 let daftarUcapan = [
     { nama: "Fikri Ramadhan", status: "Hadir", pesan: "Barakallahu lakum! Semoga sakinah mawaddah warahmah." },
-    { nama: "Anisa Putri", status: "Hadir", pesan: "Selamat Dimas dan Sarah, bahagia selalu!" },
+    { nama: "Anisa Putri", status: "Hadir", pesan: "Selamat Vicky dan Reina, bahagia selalu!" },
     { nama: "Rian Pratama", status: "Masih Ragu", pesan: "Selamat bro! Insya Allah diusahakan hadir." }
 ];
 
@@ -84,20 +88,30 @@ function tampilkanUcapan() {
 
     daftarUcapan.forEach(item => {
         const kartu = document.createElement("div");
-        kartu.className = "card card-body mb-2 shadow-sm";
+        kartu.className = "card card-body mb-2 shadow-sm border-0 kartu-ucapan";
+
+        const barisAtas = document.createElement("div");
+        barisAtas.className = "d-flex justify-content-between align-items-center mb-1";
 
         const nama = document.createElement("strong");
+        nama.className = "text-dark";
         nama.textContent = item.nama;
 
         const status = document.createElement("span");
-        status.className = "badge text-bg-secondary ms-2";
+        let badgeClass = "bg-secondary-subtle text-secondary";
+        if (item.status === "Hadir") badgeClass = "bg-success-subtle text-success";
+        else if (item.status === "Masih Ragu") badgeClass = "bg-warning-subtle text-warning-emphasis";
+        else if (item.status === "Tidak Hadir") badgeClass = "bg-danger-subtle text-danger";
+        status.className = "badge rounded-pill " + badgeClass;
         status.textContent = item.status;
 
+        barisAtas.append(nama, status);
+
         const pesan = document.createElement("p");
-        pesan.className = "mb-0 mt-1";
+        pesan.className = "mb-0 text-secondary small";
         pesan.textContent = item.pesan;
 
-        kartu.append(nama, status, pesan);
+        kartu.append(barisAtas, pesan);
         wadahUcapan.appendChild(kartu);
     });
 
@@ -107,9 +121,9 @@ function tampilkanUcapan() {
 formRsvp.addEventListener("submit", (e) => {
     e.preventDefault(); // cegah halaman reload
 
-    const nama = document.getElementById("nama").value;
+    const nama = document.getElementById("nama").value.trim();
     const status = document.getElementById("status").value;
-    const pesan = document.getElementById("pesan").value;
+    const pesan = document.getElementById("pesan").value.trim();
 
     // Validasi: nama dan pesan wajib diisi
     if (nama === "" || pesan === "") {
