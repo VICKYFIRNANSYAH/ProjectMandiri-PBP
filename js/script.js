@@ -72,12 +72,11 @@ function salinRekening(label, nomor) {
     alert(info + nomor + "\n(Berhasil disalin ke clipboard)");
 }
 
-// Data ucapan dan RSVP
+// Data ucapan dan Buku Tamu
 // Array of object berisi ucapan tamu
 let daftarUcapan = [
-    { nama: "Fikri Ramadhan", status: "Hadir", pesan: "Barakallahu lakum! Semoga sakinah mawaddah warahmah." },
-    { nama: "Anisa Putri", status: "Hadir", pesan: "Selamat Vicky dan Reina, bahagia selalu!" },
-    { nama: "Rian Pratama", status: "Masih Ragu", pesan: "Selamat bro! Insya Allah diusahakan hadir." }
+    { nama: "Fikri Ramadhan", pesan: "Barakallahu lakum! Semoga sakinah mawaddah warahmah." },
+    { nama: "Anisa Putri", pesan: "Selamat Vicky dan Reina, bahagia selalu!" }
 ];
 
 const formRsvp = document.getElementById("form-rsvp");
@@ -90,28 +89,15 @@ function tampilkanUcapan() {
         const kartu = document.createElement("div");
         kartu.className = "card card-body mb-2 shadow-sm border-0 kartu-ucapan";
 
-        const barisAtas = document.createElement("div");
-        barisAtas.className = "d-flex justify-content-between align-items-center mb-1";
-
         const nama = document.createElement("strong");
-        nama.className = "text-dark";
+        nama.className = "text-dark d-block mb-1";
         nama.textContent = item.nama;
-
-        const status = document.createElement("span");
-        let badgeClass = "bg-secondary-subtle text-secondary";
-        if (item.status === "Hadir") badgeClass = "bg-success-subtle text-success";
-        else if (item.status === "Masih Ragu") badgeClass = "bg-warning-subtle text-warning-emphasis";
-        else if (item.status === "Tidak Hadir") badgeClass = "bg-danger-subtle text-danger";
-        status.className = "badge rounded-pill " + badgeClass;
-        status.textContent = item.status;
-
-        barisAtas.append(nama, status);
 
         const pesan = document.createElement("p");
         pesan.className = "mb-0 text-secondary small";
         pesan.textContent = item.pesan;
 
-        kartu.append(barisAtas, pesan);
+        kartu.append(nama, pesan);
         wadahUcapan.appendChild(kartu);
     });
 
@@ -122,7 +108,6 @@ formRsvp.addEventListener("submit", (e) => {
     e.preventDefault(); // cegah halaman reload
 
     const nama = document.getElementById("nama").value.trim();
-    const status = document.getElementById("status").value;
     const pesan = document.getElementById("pesan").value.trim();
 
     // Validasi: nama dan pesan wajib diisi
@@ -131,10 +116,10 @@ formRsvp.addEventListener("submit", (e) => {
         return;
     }
 
-    daftarUcapan.unshift({ nama: nama, status: status, pesan: pesan }); // tambah di paling atas
+    daftarUcapan.unshift({ nama: nama, pesan: pesan }); // tambah di paling atas
     tampilkanUcapan();
     formRsvp.reset();
-    alert("Terima kasih, " + nama + "! Ucapan Anda sudah ditambahkan.");
+    alert("Terima kasih, " + nama + "! Doa restu Anda telah terkirim.");
 });
 
 tampilkanUcapan();
