@@ -1,22 +1,33 @@
 /* ==========================================================================
-   UNDANGAN PERNIKAHAN DIGITAL - WARM GOLD & CHAMPAGNE PALETTE
+   UNDANGAN PERNIKAHAN DIGITAL - ELEGANT PEACH & BLOSSOM PALETTE
    Mata Kuliah : Pemrograman Berbasis Platform (PBP)
    Mahasiswa   : Muhammad Vicky Firnansyah - S1 TI FT UNESA
    ========================================================================== */
 
 :root {
-    --gold-primary: #c59b27;
-    --gold-dark: #8f6e16;
-    --gold-accent: #b8860b;
-    --gold-light: #fbf6ea;
-    --gold-border: #ebd9ab;
-    --cream-bg: #fcfbf7;
-    --cream-card: #ffffff;
-    --cream-soft: #f8f4ec;
+    /* Primary Peach Theme Palette */
+    --peach-primary: #e07a5f;
+    --peach-dark: #8c3826;
+    --peach-accent: #c8583d;
+    --peach-light: #fef0e9;
+    --peach-border: #f5d1c2;
+    --peach-bg: #fdf8f5;
+    --peach-card: #ffffff;
+    --peach-soft: #fcf1ea;
     --text-main: #2d3142;
     --text-muted: #6c757d;
     --font-heading: 'Playfair Display', Georgia, serif;
     --font-script: 'Great Vibes', cursive;
+
+    /* Backward compatibility mappings for gold tokens */
+    --gold-primary: var(--peach-primary);
+    --gold-dark: var(--peach-dark);
+    --gold-accent: var(--peach-accent);
+    --gold-light: var(--peach-light);
+    --gold-border: var(--peach-border);
+    --cream-bg: var(--peach-bg);
+    --cream-card: var(--peach-card);
+    --cream-soft: var(--peach-soft);
 }
 
 html {
@@ -24,7 +35,7 @@ html {
 }
 
 body {
-    background-color: var(--cream-bg);
+    background-color: var(--peach-bg);
     color: var(--text-main);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     line-height: 1.65;
@@ -49,57 +60,80 @@ header {
 .judul-section {
     font-size: 2.1rem;
     font-weight: 700;
-    color: var(--gold-accent);
+    color: var(--peach-accent);
     margin-bottom: 0.35rem;
 }
 
-/* Warna & Tombol Aksen Emas (Warm Gold & Champagne) */
-.teks-emas {
-    color: var(--gold-accent) !important;
+/* Warna & Tombol Aksen Peach */
+.teks-emas,
+.teks-peach {
+    color: var(--peach-accent) !important;
 }
 
-.bg-gold-subtle {
-    background-color: var(--gold-light) !important;
-    color: var(--gold-dark) !important;
+.bg-gold-subtle,
+.bg-peach-subtle {
+    background-color: var(--peach-light) !important;
+    color: var(--peach-dark) !important;
     transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-a.bg-gold-subtle:hover {
-    background-color: #eeddbb !important;
-    color: var(--gold-accent) !important;
+a.bg-gold-subtle:hover,
+a.bg-peach-subtle:hover {
+    background-color: #f9d8cb !important;
+    color: var(--peach-accent) !important;
     transform: translateY(-2px);
 }
 
-.border-gold-subtle {
-    border-color: var(--gold-border) !important;
+.border-gold-subtle,
+.border-peach-subtle {
+    border-color: var(--peach-border) !important;
 }
 
-.btn-emas {
-    background: linear-gradient(135deg, var(--gold-primary), var(--gold-accent));
+.btn-emas,
+.btn-peach {
+    background: linear-gradient(135deg, var(--peach-primary), var(--peach-accent));
     color: #ffffff !important;
     border: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-.btn-emas:hover {
-    background: linear-gradient(135deg, var(--gold-accent), var(--gold-dark));
+.btn-emas:hover,
+.btn-peach:hover {
+    background: linear-gradient(135deg, var(--peach-accent), var(--peach-dark));
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(184, 134, 11, 0.28);
+    box-shadow: 0 6px 18px rgba(200, 88, 61, 0.28);
 }
 
-.btn-outline-emas {
-    color: var(--gold-accent);
-    border: 1.5px solid var(--gold-accent);
+.btn-outline-emas,
+.btn-outline-peach {
+    color: var(--peach-accent);
+    border: 1.5px solid var(--peach-accent);
     background: transparent;
     transition: all 0.2s ease;
 }
 
-.btn-outline-emas:hover {
-    background: var(--gold-accent);
+.btn-outline-emas:hover,
+.btn-outline-peach:hover {
+    background: var(--peach-accent);
     color: #ffffff;
     transform: translateY(-2px);
 }
 
+/* Navbar Links Interaction */
+.navbar .nav-link {
+    transition: color 0.2s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: var(--peach-accent) !important;
+}
+
+/* Form Focus Enhancement */
+.form-control:focus {
+    border-color: var(--peach-primary) !important;
+    box-shadow: 0 0 0 0.25rem rgba(224, 122, 95, 0.2) !important;
+}
 
 /* Cover Layar Penuh */
 #cover {
@@ -109,7 +143,7 @@ a.bg-gold-subtle:hover {
     width: 100%;
     height: 100dvh;
     z-index: 2000;
-    background: radial-gradient(circle at center, #ffffff 0%, #fcfbf7 60%, #f5eee0 100%);
+    background: radial-gradient(circle at center, #ffffff 0%, #fdf8f5 60%, #fae6dc 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -119,7 +153,7 @@ a.bg-gold-subtle:hover {
 .cover-card {
     background: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(8px);
-    border: 1px solid var(--gold-border);
+    border: 1px solid var(--peach-border);
     max-width: 27.5rem;
     width: 100%;
     margin: auto;
@@ -138,8 +172,8 @@ a.bg-gold-subtle:hover {
     height: 9.5rem;
     border-radius: 50%;
     object-fit: cover;
-    border: 0.3rem solid #e6c875;
-    box-shadow: 0 8px 20px rgba(197, 155, 39, 0.2);
+    border: 0.3rem solid #f4bcab;
+    box-shadow: 0 8px 20px rgba(224, 122, 95, 0.22);
     margin-left: auto;
     margin-right: auto;
 }
@@ -148,7 +182,7 @@ a.bg-gold-subtle:hover {
 #hero {
     min-height: 100dvh;
     padding: 6rem 0 3.5rem;
-    background: linear-gradient(180deg, rgba(252, 251, 247, 0.88) 0%, rgba(248, 244, 236, 0.95) 100%),
+    background: linear-gradient(180deg, rgba(253, 248, 245, 0.88) 0%, rgba(250, 230, 220, 0.95) 100%),
         url("../assets/img/couple_hero.jpg");
     background-size: cover;
     background-position: center;
@@ -164,7 +198,7 @@ a.bg-gold-subtle:hover {
     max-width: 40rem;
     font-style: italic;
     background: rgba(255, 255, 255, 0.9);
-    border-left: 4px solid var(--gold-accent);
+    border-left: 4px solid var(--peach-accent);
     border-radius: 0.5rem;
     padding: 1.25rem 1.5rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
@@ -173,10 +207,10 @@ a.bg-gold-subtle:hover {
 /* Countdown Cards */
 .kotak-countdown {
     background: #ffffff;
-    border: 1px solid var(--gold-border);
+    border: 1px solid var(--peach-border);
     border-radius: 0.75rem;
     padding: 0.75rem 0.5rem;
-    box-shadow: 0 4px 12px rgba(197, 155, 39, 0.1);
+    box-shadow: 0 4px 12px rgba(224, 122, 95, 0.12);
     transition: transform 0.2s ease;
 }
 
@@ -185,7 +219,7 @@ a.bg-gold-subtle:hover {
 }
 
 .angka-countdown {
-    color: var(--gold-accent);
+    color: var(--peach-accent);
     font-family: var(--font-heading);
     line-height: 1.1;
 }
@@ -193,13 +227,13 @@ a.bg-gold-subtle:hover {
 /* Efek Hover Kartu */
 .kartu-hover {
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    border: 1px solid var(--gold-border);
+    border: 1px solid var(--peach-border);
 }
 
 .kartu-hover:hover {
     transform: translateY(-0.35rem);
-    box-shadow: 0 14px 28px rgba(197, 155, 39, 0.16) !important;
-    border-color: var(--gold-accent);
+    box-shadow: 0 14px 28px rgba(224, 122, 95, 0.16) !important;
+    border-color: var(--peach-accent);
 }
 
 /* Ikon Lingkaran Acara */
@@ -207,8 +241,8 @@ a.bg-gold-subtle:hover {
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 50%;
-    background-color: var(--gold-light);
-    color: var(--gold-accent);
+    background-color: var(--peach-light);
+    color: var(--peach-accent);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -219,13 +253,13 @@ a.bg-gold-subtle:hover {
 /* Peta dan Galeri */
 .peta {
     max-width: 52rem;
-    border: 1px solid var(--gold-border);
+    border: 1px solid var(--peach-border);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
 .galeri {
     max-width: 42rem;
-    border: 1px solid var(--gold-border);
+    border: 1px solid var(--peach-border);
 }
 
 .galeri img {
@@ -236,27 +270,27 @@ a.bg-gold-subtle:hover {
 /* Tanda Kasih / Rekening Card */
 .kartu-rekening {
     background: #ffffff;
-    border: 1px solid var(--gold-border);
+    border: 1px solid var(--peach-border);
     border-radius: 1rem;
     padding: 1.75rem 1.25rem;
-    box-shadow: 0 4px 15px rgba(197, 155, 39, 0.08);
+    box-shadow: 0 4px 15px rgba(224, 122, 95, 0.1);
 }
 
 .bingkai-qris {
-    border: 1px solid var(--gold-border);
+    border: 1px solid var(--peach-border);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .bingkai-qris:hover {
     transform: scale(1.02);
-    box-shadow: 0 8px 24px rgba(197, 155, 39, 0.2) !important;
+    box-shadow: 0 8px 24px rgba(224, 122, 95, 0.2) !important;
 }
 
 .nomor-rekening {
     font-family: 'Courier New', Courier, monospace;
     letter-spacing: 2px;
-    background: var(--gold-light);
-    color: var(--gold-dark);
+    background: var(--peach-light);
+    color: var(--peach-dark);
     padding: 0.35rem 0.85rem;
     border-radius: 0.5rem;
     display: inline-block;
@@ -270,7 +304,7 @@ a.bg-gold-subtle:hover {
 }
 
 .kartu-ucapan {
-    border-left: 3.5px solid var(--gold-accent) !important;
+    border-left: 3.5px solid var(--peach-accent) !important;
     background: #ffffff;
     border-radius: 0.75rem;
 }
@@ -281,12 +315,12 @@ a.bg-gold-subtle:hover {
     height: 3.2rem;
     z-index: 1050;
     background-color: #ffffff;
-    color: var(--gold-dark);
-    border: 1.5px solid var(--gold-accent);
+    color: var(--peach-dark);
+    border: 1.5px solid var(--peach-accent);
     transition: all 0.3s ease;
 }
 
 #btn-musik:hover {
-    background-color: var(--gold-light);
+    background-color: var(--peach-light);
     transform: scale(1.08);
 }
