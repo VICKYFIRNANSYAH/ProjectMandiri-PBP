@@ -7,31 +7,28 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <!-- Google Fonts: Playfair Display & Great Vibes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
     <!-- Bootstrap 5.3 CSS & Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
-    <!-- CSS Mandiri (Elegant Peach & Blossom Palette) -->
+
+    <!-- CSS sendiri (palet Peach & Blossom, dipasang setelah Bootstrap) -->
     <link rel="stylesheet" href="css/style.css?v=peach">
 </head>
 <body class="overflow-hidden">
 
     <!-- Cover -->
-    <div id="cover" class="d-flex align-items-center justify-content-center text-center p-3 p-md-4">
-        <div class="cover-card card shadow-lg rounded-4 py-3 py-md-4 px-3 px-md-4">
+    <div id="cover" class="d-flex align-items-center justify-content-center text-center p-3">
+        <div class="cover-card card shadow-lg rounded-4 p-4">
             <h1 class="font-script display-4 teks-emas mb-2">Vicky &amp; Reina</h1>
             <img src="assets/img/couple_hero.jpg" alt="Vicky dan Reina" class="foto-bulat my-2">
-            <div class="my-2 py-1 px-3 rounded-pill d-inline-block border border-gold-subtle" style="background-color: rgba(254, 233, 224, 0.55);">
-                <div class="text-secondary" style="font-size: 0.68rem; line-height: 1.2;">Kepada Yth. Bapak/Ibu/Saudara/i:</div>
-                <div class="text-dark fw-bold" style="font-size: 0.8rem; line-height: 1.3;">Tamu Undangan</div>
+            <div class="pill-emas d-inline-block mx-auto my-2 py-1 px-3 small">
+                <div class="text-secondary">Kepada Yth. Bapak/Ibu/Saudara/i:</div>
+                <div class="fw-bold">Tamu Undangan</div>
             </div>
-            <p class="text-secondary small mb-3 mx-auto" style="max-width: 26rem; font-size: 0.82rem; line-height: 1.5;">
-                Tanpa mengurangi rasa hormat, kami mengundang Anda<br class="d-none d-sm-inline">
-                untuk hadir dan memberikan doa restu pada hari bahagia kami.
+            <p class="text-secondary small mb-3">
+                Tanpa mengurangi rasa hormat, kami mengundang Anda untuk hadir dan memberikan doa restu pada hari bahagia kami.
             </p>
             <button id="btn-buka" class="btn btn-emas rounded-pill px-4 py-2 mx-auto">
                 <i class="bi bi-envelope-open-heart me-2"></i>Buka Undangan
@@ -43,19 +40,19 @@
     <audio id="musik" loop preload="auto">
         <source src="assets/mp3/nothings-gonna-change-my-love-for-you.mp3" type="audio/mpeg">
     </audio>
-    <button id="btn-musik" class="btn rounded-circle shadow position-fixed bottom-0 end-0 m-3 m-md-4 d-none d-flex align-items-center justify-content-center" type="button" aria-label="Putar atau hentikan musik">
+    <button id="btn-musik" class="btn rounded-circle shadow position-fixed bottom-0 end-0 m-3 d-none" type="button" aria-label="Putar atau hentikan musik">
         <i class="bi bi-play-fill fs-5"></i>
     </button>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-white bg-opacity-75 shadow-sm fixed-top py-2" style="backdrop-filter: blur(10px);">
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top py-2">
         <div class="container">
-            <a class="navbar-brand font-script fs-2 teks-emas fw-bold py-0" href="#hero">V &amp; R</a>
+            <a class="navbar-brand font-script fs-2 teks-emas py-0" href="#hero">V &amp; R</a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Buka menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto small fw-semibold text-uppercase tracking-wider">
+                <ul class="navbar-nav ms-auto small fw-semibold text-uppercase">
                     <li class="nav-item"><a class="nav-link px-3" href="#mempelai">Mempelai</a></li>
                     <li class="nav-item"><a class="nav-link px-3" href="#acara">Acara</a></li>
                     <li class="nav-item"><a class="nav-link px-3" href="#galeri">Galeri</a></li>
@@ -69,45 +66,43 @@
     <!-- Hero Section -->
     <header id="hero" class="d-flex align-items-center text-center">
         <div class="container">
-            <div class="hero-box">
-                <h1 class="font-script display-1 teks-emas mb-2">Vicky &amp; Reina</h1>
-                <p class="fs-6 fw-semibold text-secondary text-uppercase mb-4" style="letter-spacing: 2px;">
-                    Sabtu, 12 Desember 2026 &bull; Surabaya, Jawa Timur
-                </p>
+            <h1 class="font-script display-1 teks-emas mb-2">Vicky &amp; Reina</h1>
+            <p class="fw-semibold text-secondary text-uppercase mb-4">
+                Sabtu, 12 Desember 2026 &bull; Surabaya, Jawa Timur
+            </p>
 
-                <!-- Countdown -->
-                <div class="row g-2 g-md-3 justify-content-center my-4">
-                    <div class="col-3 col-md-2">
-                        <div class="kotak-countdown">
-                            <div id="hari" class="fs-2 fw-bold angka-countdown">0</div>
-                            <small class="text-secondary text-uppercase fw-semibold" style="font-size: 0.72rem; letter-spacing: 1px;">Hari</small>
-                        </div>
-                    </div>
-                    <div class="col-3 col-md-2">
-                        <div class="kotak-countdown">
-                            <div id="jam" class="fs-2 fw-bold angka-countdown">0</div>
-                            <small class="text-secondary text-uppercase fw-semibold" style="font-size: 0.72rem; letter-spacing: 1px;">Jam</small>
-                        </div>
-                    </div>
-                    <div class="col-3 col-md-2">
-                        <div class="kotak-countdown">
-                            <div id="menit" class="fs-2 fw-bold angka-countdown">0</div>
-                            <small class="text-secondary text-uppercase fw-semibold" style="font-size: 0.72rem; letter-spacing: 1px;">Menit</small>
-                        </div>
-                    </div>
-                    <div class="col-3 col-md-2">
-                        <div class="kotak-countdown">
-                            <div id="detik" class="fs-2 fw-bold angka-countdown">0</div>
-                            <small class="text-secondary text-uppercase fw-semibold" style="font-size: 0.72rem; letter-spacing: 1px;">Detik</small>
-                        </div>
+            <!-- Countdown -->
+            <div class="row g-2 justify-content-center my-4">
+                <div class="col-3 col-md-2">
+                    <div class="kotak-countdown">
+                        <div id="hari" class="fs-2 fw-bold angka-countdown">0</div>
+                        <small class="text-secondary text-uppercase">Hari</small>
                     </div>
                 </div>
-
-                <blockquote class="mx-auto kutipan my-4">
-                    <q class="text-secondary">Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.</q>
-                    <footer class="mt-2 text-dark fw-bold"><cite>&mdash; QS. Ar-Rum: 21 &mdash;</cite></footer>
-                </blockquote>
+                <div class="col-3 col-md-2">
+                    <div class="kotak-countdown">
+                        <div id="jam" class="fs-2 fw-bold angka-countdown">0</div>
+                        <small class="text-secondary text-uppercase">Jam</small>
+                    </div>
+                </div>
+                <div class="col-3 col-md-2">
+                    <div class="kotak-countdown">
+                        <div id="menit" class="fs-2 fw-bold angka-countdown">0</div>
+                        <small class="text-secondary text-uppercase">Menit</small>
+                    </div>
+                </div>
+                <div class="col-3 col-md-2">
+                    <div class="kotak-countdown">
+                        <div id="detik" class="fs-2 fw-bold angka-countdown">0</div>
+                        <small class="text-secondary text-uppercase">Detik</small>
+                    </div>
+                </div>
             </div>
+
+            <blockquote class="kutipan mx-auto my-4">
+                <q class="text-secondary">Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.</q>
+                <footer class="mt-2 fw-bold"><cite>&mdash; QS. Ar-Rum: 21 &mdash;</cite></footer>
+            </blockquote>
         </div>
     </header>
 
@@ -122,15 +117,15 @@
             <div class="row g-4 justify-content-center">
                 <!-- Mempelai Pria -->
                 <div class="col-md-5">
-                    <div class="card h-100 shadow-sm kartu-hover rounded-4 text-center border-0 p-3">
-                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-3">
-                            <img src="assets/img/groom.jpg" alt="M. Vicky Firnansyah" class="foto-bulat mx-auto mb-3">
-                            <h3 class="card-title font-heading h4 fw-bold teks-emas mb-2">M. Vicky Firnansyah, S.Kom.</h3>
-                            <p class="card-text text-secondary mb-3 small">
+                    <div class="card h-100 shadow-sm kartu-hover rounded-4">
+                        <div class="card-body p-4">
+                            <img src="assets/img/groom.jpg" alt="M. Vicky Firnansyah" class="foto-bulat mb-3">
+                            <h3 class="font-heading h4 fw-bold teks-emas">M. Vicky Firnansyah, S.Kom.</h3>
+                            <p class="text-secondary small">
                                 Putra pertama dari pasangan<br>
-                                <strong class="text-dark">Bpk. Bambang Supriyadi</strong> &amp; <strong class="text-dark">Ibu Sri Wahyuni</strong>
+                                <strong>Bpk. Bambang Supriyadi</strong> &amp; <strong>Ibu Sri Wahyuni</strong>
                             </p>
-                            <a href="https://www.instagram.com/firnansyah15" target="_blank" rel="noopener noreferrer" class="small text-secondary text-decoration-none py-1 px-3 rounded-pill border border-gold-subtle" style="background-color: rgba(254, 233, 224, 0.55);">
+                            <a href="https://www.instagram.com/firnansyah15" target="_blank" rel="noopener noreferrer" class="pill-emas d-inline-block small text-secondary text-decoration-none py-1 px-3">
                                 <i class="bi bi-instagram me-1 text-danger"></i> @firnansyah15
                             </a>
                         </div>
@@ -139,15 +134,15 @@
 
                 <!-- Mempelai Wanita -->
                 <div class="col-md-5">
-                    <div class="card h-100 shadow-sm kartu-hover rounded-4 text-center border-0 p-3">
-                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-3">
-                            <img src="assets/img/bride.jpg" alt="Reina Sulistyani Arifin" class="foto-bulat mx-auto mb-3">
-                            <h3 class="card-title font-heading h4 fw-bold teks-emas mb-2">Reina Sulistyani Arifin, S.Kom.</h3>
-                            <p class="card-text text-secondary mb-3 small">
+                    <div class="card h-100 shadow-sm kartu-hover rounded-4">
+                        <div class="card-body p-4">
+                            <img src="assets/img/bride.jpg" alt="Reina Sulistyani Arifin" class="foto-bulat mb-3">
+                            <h3 class="font-heading h4 fw-bold teks-emas">Reina Sulistyani Arifin, S.Kom.</h3>
+                            <p class="text-secondary small">
                                 Putri pertama dari pasangan<br>
-                                <strong class="text-dark">Bpk. Hendra Gunawan</strong> &amp; <strong class="text-dark">Ibu Ratna Dewi</strong>
+                                <strong>Bpk. Hendra Gunawan</strong> &amp; <strong>Ibu Ratna Dewi</strong>
                             </p>
-                            <a href="https://www.instagram.com/reinasulistyani" target="_blank" rel="noopener noreferrer" class="small text-secondary text-decoration-none py-1 px-3 rounded-pill border border-gold-subtle" style="background-color: rgba(254, 233, 224, 0.55);">
+                            <a href="https://www.instagram.com/reinasulistyani" target="_blank" rel="noopener noreferrer" class="pill-emas d-inline-block small text-secondary text-decoration-none py-1 px-3">
                                 <i class="bi bi-instagram me-1 text-danger"></i> @reinasulistyani
                             </a>
                         </div>
@@ -165,52 +160,48 @@
                 Insya Allah seluruh rangkaian acara pernikahan kami akan diselenggarakan pada:
             </p>
 
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="card shadow-sm kartu-hover rounded-4 border-0 overflow-hidden text-start">
-                        <div class="row g-0">
-                            <!-- Kolom Informasi Acara -->
-                            <div class="col-lg-5 p-4 p-md-5 d-flex flex-column justify-content-center">
-                                <div class="d-inline-flex align-items-center mb-3">
-                                    <div class="ikon-lingkaran mb-0 me-3">
-                                        <i class="bi bi-geo-alt-fill"></i>
-                                    </div>
-                                    <div>
-                                        <span class="text-secondary small d-block">Hari &amp; Tanggal</span>
-                                        <strong class="text-dark fs-6">Sabtu, 12 Desember 2026</strong>
-                                    </div>
-                                </div>
-
-                                <!-- Jadwal Waktu -->
-                                <div class="bg-gold-subtle rounded-3 p-3 mb-3">
-                                    <div class="d-flex justify-content-between align-items-center pb-2 mb-2 border-bottom border-gold-subtle">
-                                        <span class="small fw-semibold text-dark">
-                                            <i class="bi bi-heart-fill teks-emas me-2"></i>Akad Nikah
-                                        </span>
-                                        <span class="small text-secondary fw-medium">08.00 - 10.00 WIB</span>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="small fw-semibold text-dark">
-                                            <i class="bi bi-cake2-fill teks-emas me-2"></i>Resepsi
-                                        </span>
-                                        <span class="small text-secondary fw-medium">11.00 - 14.00 WIB</span>
-                                    </div>
-                                </div>
-
-                                <!-- Nama Tempat & Alamat -->
-                                <h3 class="font-heading h4 fw-bold teks-emas mb-1">Masjid Nasional Al-Akbar</h3>
-                                <p class="small text-secondary mb-0">
-                                    Jl. Masjid Al-Akbar Timur No.1, Pagesangan, Kec. Jambangan, Kota Surabaya, Jawa Timur 60274
-                                </p>
+            <div class="card shadow-sm rounded-4 overflow-hidden text-start">
+                <div class="row g-0">
+                    <!-- Kolom Informasi Acara -->
+                    <div class="col-lg-5 p-4 d-flex flex-column justify-content-center">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="ikon-lingkaran me-3">
+                                <i class="bi bi-calendar-heart"></i>
                             </div>
-
-                            <!-- Kolom Peta Google Maps -->
-                            <div class="col-lg-7" style="min-height: 22rem;">
-                                <iframe title="Peta Lokasi Acara" class="w-100 h-100" style="min-height: 22rem; border: 0;"
-                                    src="https://www.google.com/maps?q=Masjid+Nasional+Al-Akbar+Surabaya&output=embed"
-                                    loading="lazy" allowfullscreen></iframe>
+                            <div>
+                                <span class="text-secondary small d-block">Hari &amp; Tanggal</span>
+                                <strong>Sabtu, 12 Desember 2026</strong>
                             </div>
                         </div>
+
+                        <!-- Jadwal Waktu -->
+                        <div class="kotak-jadwal rounded-3 p-3 mb-3">
+                            <div class="d-flex justify-content-between pb-2 mb-2 border-bottom">
+                                <span class="small fw-semibold">
+                                    <i class="bi bi-heart-fill teks-emas me-2"></i>Akad Nikah
+                                </span>
+                                <span class="small text-secondary">08.00 - 10.00 WIB</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span class="small fw-semibold">
+                                    <i class="bi bi-cake2-fill teks-emas me-2"></i>Resepsi
+                                </span>
+                                <span class="small text-secondary">11.00 - 14.00 WIB</span>
+                            </div>
+                        </div>
+
+                        <!-- Nama Tempat & Alamat -->
+                        <h3 class="font-heading h4 fw-bold teks-emas mb-1">Masjid Nasional Al-Akbar</h3>
+                        <p class="small text-secondary mb-0">
+                            Jl. Masjid Al-Akbar Timur No.1, Pagesangan, Kec. Jambangan, Kota Surabaya, Jawa Timur 60274
+                        </p>
+                    </div>
+
+                    <!-- Kolom Peta Google Maps -->
+                    <div class="col-lg-7">
+                        <iframe title="Peta Lokasi Acara" class="peta-acara w-100 h-100"
+                            src="https://www.google.com/maps?q=Masjid+Nasional+Al-Akbar+Surabaya&output=embed"
+                            loading="lazy" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -225,7 +216,7 @@
                 Potret kebersamaan kami dalam menyongsong babak baru kehidupan:
             </p>
 
-            <div id="carouselGaleri" class="carousel slide mx-auto galeri rounded-4 overflow-hidden shadow-sm" data-bs-ride="carousel">
+            <div id="carouselGaleri" class="carousel slide galeri mx-auto rounded-4 overflow-hidden shadow-sm" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselGaleri" data-bs-slide-to="0" class="active" aria-label="Foto 1"></button>
                     <button type="button" data-bs-target="#carouselGaleri" data-bs-slide-to="1" aria-label="Foto 2"></button>
@@ -254,7 +245,7 @@
         </div>
     </section>
 
-    <!-- Tanda Kasih / Hadiah -->
+    <!-- Tanda Kasih (QRIS) -->
     <section id="kado" class="py-5">
         <div class="container text-center">
             <h2 class="judul-section">Tanda Kasih</h2>
@@ -264,18 +255,11 @@
 
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4">
-                    <div class="kartu-rekening kartu-hover p-4 text-center">
-                        <!-- Gambar QR Code Murni -->
-                        <div class="bingkai-qris mx-auto mb-3 p-3 bg-white rounded-3 shadow-sm" style="max-width: 15rem;">
-                            <img src="assets/img/qris.png" alt="Amplop Digital" class="img-fluid rounded-2">
-                        </div>
-
-                        <!-- Aksi Tombol -->
-                        <div class="d-flex justify-content-center">
-                            <a href="assets/img/qris.png" target="_blank" download="Amplop-Digital.png" class="btn btn-emas rounded-pill px-4 py-2 btn-sm">
-                                <i class="bi bi-download me-1"></i> Unduh QR Code
-                            </a>
-                        </div>
+                    <div class="card shadow-sm rounded-4 p-4">
+                        <img src="assets/img/qris.png" alt="QRIS Amplop Digital" class="bingkai-qris img-fluid mx-auto mb-3 p-2 rounded-3">
+                        <a href="assets/img/qris.png" download="Amplop-Digital.png" class="btn btn-emas btn-sm rounded-pill px-4 py-2 mx-auto">
+                            <i class="bi bi-download me-1"></i>Unduh QR Code
+                        </a>
                     </div>
                 </div>
             </div>
@@ -295,15 +279,15 @@
             <div class="row g-4 justify-content-center">
                 <!-- Form Ucapan -->
                 <div class="col-lg-5">
-                    <form id="form-rsvp" class="card card-body shadow-sm rounded-4 border-0 p-4">
+                    <form id="form-rsvp" class="card card-body shadow-sm rounded-4 p-4">
                         <h4 class="font-heading h5 fw-bold teks-emas mb-3">Kirim Doa Restu</h4>
                         <div class="mb-3">
                             <label for="nama" class="form-label small fw-semibold">Nama Lengkap</label>
-                            <input type="text" class="form-control rounded-3" id="nama" placeholder="Contoh: Budi Santoso" required>
+                            <input type="text" class="form-control" id="nama" placeholder="Contoh: Budi Santoso">
                         </div>
                         <div class="mb-3">
                             <label for="pesan" class="form-label small fw-semibold">Pesan &amp; Doa Restu</label>
-                            <textarea class="form-control rounded-3" id="pesan" rows="4" placeholder="Tuliskan ucapan dan doa terbaik..." required></textarea>
+                            <textarea class="form-control" id="pesan" rows="4" placeholder="Tuliskan ucapan dan doa terbaik..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-emas rounded-pill py-2 fw-semibold">
                             <i class="bi bi-send-fill me-2"></i>Kirim Doa Restu
@@ -313,11 +297,11 @@
 
                 <!-- Daftar ucapan -->
                 <div class="col-lg-6">
-                    <div class="card card-body shadow-sm rounded-4 border-0 p-4">
+                    <div class="card card-body shadow-sm rounded-4 p-4">
                         <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
                             <h4 class="font-heading h5 fw-bold teks-emas mb-0">Doa Restu Tamu</h4>
                             <span class="small text-secondary">
-                                Total: <strong id="jumlah" class="text-dark">0</strong> Ucapan
+                                Total: <strong id="jumlah">0</strong> Ucapan
                             </span>
                         </div>
                         <div id="daftar-ucapan" class="daftar-ucapan"></div>
@@ -328,17 +312,15 @@
     </section>
 
     <!-- Footer -->
-    <footer class="text-center py-5 small text-secondary" style="background-color: var(--cream-bg); border-top: 1px solid var(--gold-border);">
+    <footer class="footer-emas text-center py-5 small text-secondary">
         <div class="container">
             <h3 class="font-script fs-1 teks-emas mb-2">Vicky &amp; Reina</h3>
             <p class="mb-2">Terima kasih atas doa, restu, dan kehadiran Anda.</p>
-            <p class="mb-0 text-muted" style="font-size: 0.8rem;">
-                Project Mandiri PBP &bull; Muhammad Vicky Firnansyah &bull; S1 Teknik Informatika UNESA
-            </p>
+            <p class="mb-0">Project Mandiri PBP &bull; Muhammad Vicky Firnansyah &bull; S1 Teknik Informatika UNESA</p>
         </div>
     </footer>
 
-    <!-- Script JS -->
+    <!-- Script JS (Bootstrap dulu, lalu script sendiri) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>

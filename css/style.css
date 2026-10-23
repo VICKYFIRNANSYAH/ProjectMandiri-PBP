@@ -1,141 +1,61 @@
-/* ==========================================================================
-   UNDANGAN PERNIKAHAN DIGITAL - ELEGANT PEACH & BLOSSOM PALETTE
-   Mata Kuliah : Pemrograman Berbasis Platform (PBP)
-   Mahasiswa   : Muhammad Vicky Firnansyah - S1 TI FT UNESA
-   ========================================================================== */
-
-:root {
-    /* Primary Peach Theme Palette */
-    --peach-primary: #e07a5f;
-    --peach-dark: #8c3826;
-    --peach-accent: #c8583d;
-    --peach-light: #fef0e9;
-    --peach-border: #f5d1c2;
-    --peach-bg: #fdf8f5;
-    --peach-card: #ffffff;
-    --peach-soft: #fcf1ea;
-    --text-main: #2d3142;
-    --text-muted: #6c757d;
-    --font-heading: 'Playfair Display', Georgia, serif;
-    --font-script: 'Great Vibes', cursive;
-
-    /* Backward compatibility mappings for gold tokens */
-    --gold-primary: var(--peach-primary);
-    --gold-dark: var(--peach-dark);
-    --gold-accent: var(--peach-accent);
-    --gold-light: var(--peach-light);
-    --gold-border: var(--peach-border);
-    --cream-bg: var(--peach-bg);
-    --cream-card: var(--peach-card);
-    --cream-soft: var(--peach-soft);
-}
+/* CSS tambahan di luar Bootstrap (dipasang setelah Bootstrap) */
 
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--peach-bg);
-    color: var(--text-main);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.65;
+    background-color: #fdf8f5;
+    color: #2d3142;
 }
 
-/* Scroll Offset untuk Navbar Fixed */
+/* Section tidak tertutup navbar saat diklik dari menu */
 section,
 header {
     scroll-margin-top: 4.5rem;
 }
 
-/* Tipografi */
+/* Font */
 .font-script {
-    font-family: var(--font-script);
+    font-family: 'Great Vibes', cursive;
 }
 
 .font-heading,
 .judul-section {
-    font-family: var(--font-heading);
+    font-family: 'Playfair Display', Georgia, serif;
 }
 
 .judul-section {
-    font-size: 2.1rem;
+    font-size: 2rem;
     font-weight: 700;
-    color: var(--peach-accent);
-    margin-bottom: 0.35rem;
+    color: #c8583d;
 }
 
-/* Warna & Tombol Aksen Peach */
-.teks-emas,
-.teks-peach {
-    color: var(--peach-accent) !important;
+/* Warna aksen peach (nama class "emas" sisa dari tema awal) */
+.teks-emas {
+    color: #c8583d;
 }
 
-.bg-gold-subtle,
-.bg-peach-subtle {
-    background-color: var(--peach-light) !important;
-    color: var(--peach-dark) !important;
-    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-a.bg-gold-subtle:hover,
-a.bg-peach-subtle:hover {
-    background-color: #f9d8cb !important;
-    color: var(--peach-accent) !important;
-    transform: translateY(-2px);
-}
-
-.border-gold-subtle,
-.border-peach-subtle {
-    border-color: var(--peach-border) !important;
-}
-
-.btn-emas,
-.btn-peach {
-    background: linear-gradient(135deg, var(--peach-primary), var(--peach-accent));
-    color: #ffffff !important;
-    border: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-}
-
-.btn-emas:hover,
-.btn-peach:hover {
-    background: linear-gradient(135deg, var(--peach-accent), var(--peach-dark));
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(200, 88, 61, 0.28);
-}
-
-.btn-outline-emas,
-.btn-outline-peach {
-    color: var(--peach-accent);
-    border: 1.5px solid var(--peach-accent);
-    background: transparent;
-    transition: all 0.2s ease;
-}
-
-.btn-outline-emas:hover,
-.btn-outline-peach:hover {
-    background: var(--peach-accent);
+.btn-emas {
+    background-color: #e07a5f;
     color: #ffffff;
-    transform: translateY(-2px);
+    border: none;
+    transition: background-color 0.3s;
 }
 
-/* Navbar Links Interaction */
-.navbar .nav-link {
-    transition: color 0.2s ease;
+.btn-emas:hover {
+    background-color: #8c3826;
+    color: #ffffff;
 }
 
-.navbar .nav-link:hover,
-.navbar .nav-link:focus {
-    color: var(--peach-accent) !important;
+/* Kotak kecil berwarna peach muda (tamu di cover & link Instagram) */
+.pill-emas {
+    background-color: #fef0e9;
+    border: 1px solid #f5d1c2;
+    border-radius: 50rem;
 }
 
-/* Form Focus Enhancement */
-.form-control:focus {
-    border-color: var(--peach-primary) !important;
-    box-shadow: 0 0 0 0.25rem rgba(224, 122, 95, 0.2) !important;
-}
-
-/* Cover Layar Penuh */
+/* Cover layar penuh */
 #cover {
     position: fixed;
     top: 0;
@@ -143,123 +63,97 @@ a.bg-peach-subtle:hover {
     width: 100%;
     height: 100dvh;
     z-index: 2000;
-    background: radial-gradient(circle at center, #ffffff 0%, #fdf8f5 60%, #fae6dc 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.25rem;
+    background: linear-gradient(135deg, #ffffff, #fae6dc);
 }
 
 .cover-card {
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(8px);
-    border: 1px solid var(--peach-border);
-    max-width: 27.5rem;
+    max-width: 27rem;
     width: 100%;
-    margin: auto;
+}
+
+/* Foto bulat (cover & kartu mempelai) */
+.foto-bulat {
+    display: block;
+    width: 9rem;
+    height: 9rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 0.25rem solid #f4bcab;
 }
 
 .cover-card .foto-bulat {
-    width: 7.25rem;
-    height: 7.25rem;
-    border-width: 0.25rem;
+    width: 7rem;
+    height: 7rem;
 }
 
-/* Foto Bulat (Cover & Kartu Mempelai) */
-.foto-bulat {
-    display: block;
-    width: 9.5rem;
-    height: 9.5rem;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 0.3rem solid #f4bcab;
-    box-shadow: 0 8px 20px rgba(224, 122, 95, 0.22);
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Hero Section */
+/* Hero */
 #hero {
     min-height: 100dvh;
-    padding: 6rem 0 3.5rem;
-    background: linear-gradient(180deg, rgba(253, 248, 245, 0.88) 0%, rgba(250, 230, 220, 0.95) 100%),
+    padding: 6rem 0 3rem;
+    background: linear-gradient(rgba(253, 248, 245, 0.9), rgba(250, 230, 220, 0.95)),
         url("../assets/img/couple_hero.jpg");
     background-size: cover;
     background-position: center;
-    background-attachment: scroll;
-}
-
-.hero-box {
-    max-width: 44rem;
-    margin: 0 auto;
 }
 
 .kutipan {
     max-width: 40rem;
-    font-style: italic;
-    background: rgba(255, 255, 255, 0.9);
-    border-left: 4px solid var(--peach-accent);
-    border-radius: 0.5rem;
     padding: 1.25rem 1.5rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    font-style: italic;
+    background-color: #ffffff;
+    border-left: 0.25rem solid #c8583d;
+    border-radius: 0.5rem;
 }
 
-/* Countdown Cards */
+/* Countdown */
 .kotak-countdown {
-    background: #ffffff;
-    border: 1px solid var(--peach-border);
+    padding: 0.75rem 0.25rem;
+    background-color: #ffffff;
+    border: 1px solid #f5d1c2;
     border-radius: 0.75rem;
-    padding: 0.75rem 0.5rem;
-    box-shadow: 0 4px 12px rgba(224, 122, 95, 0.12);
-    transition: transform 0.2s ease;
-}
-
-.kotak-countdown:hover {
-    transform: translateY(-2px);
 }
 
 .angka-countdown {
-    color: var(--peach-accent);
-    font-family: var(--font-heading);
-    line-height: 1.1;
+    font-family: 'Playfair Display', Georgia, serif;
+    color: #c8583d;
 }
 
-/* Efek Hover Kartu */
+/* Efek hover kartu */
 .kartu-hover {
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    border: 1px solid var(--peach-border);
+    transition: transform 0.3s;
 }
 
 .kartu-hover:hover {
     transform: translateY(-0.35rem);
-    box-shadow: 0 14px 28px rgba(224, 122, 95, 0.16) !important;
-    border-color: var(--peach-accent);
 }
 
-/* Ikon Lingkaran Acara */
+/* Acara */
 .ikon-lingkaran {
     width: 3.5rem;
     height: 3.5rem;
-    border-radius: 50%;
-    background-color: var(--peach-light);
-    color: var(--peach-accent);
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.6rem;
-    margin-bottom: 1rem;
+    color: #c8583d;
+    background-color: #fef0e9;
+    border-radius: 50%;
 }
 
-/* Peta dan Galeri */
-.peta {
-    max-width: 52rem;
-    border: 1px solid var(--peach-border);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+.kotak-jadwal {
+    background-color: #fef0e9;
 }
 
+.peta-acara {
+    min-height: 22rem;
+    border: 0;
+}
+
+/* Galeri */
 .galeri {
     max-width: 42rem;
-    border: 1px solid var(--peach-border);
 }
 
 .galeri img {
@@ -267,60 +161,38 @@ a.bg-peach-subtle:hover {
     object-fit: cover;
 }
 
-/* Tanda Kasih / Rekening Card */
-.kartu-rekening {
-    background: #ffffff;
-    border: 1px solid var(--peach-border);
-    border-radius: 1rem;
-    padding: 1.75rem 1.25rem;
-    box-shadow: 0 4px 15px rgba(224, 122, 95, 0.1);
-}
-
+/* QRIS */
 .bingkai-qris {
-    border: 1px solid var(--peach-border);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    max-width: 15rem;
+    background-color: #ffffff;
+    border: 1px solid #f5d1c2;
 }
 
-.bingkai-qris:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 24px rgba(224, 122, 95, 0.2) !important;
-}
-
-.nomor-rekening {
-    font-family: 'Courier New', Courier, monospace;
-    letter-spacing: 2px;
-    background: var(--peach-light);
-    color: var(--peach-dark);
-    padding: 0.35rem 0.85rem;
-    border-radius: 0.5rem;
-    display: inline-block;
-}
-
-/* Daftar Ucapan RSVP */
+/* Daftar ucapan */
 .daftar-ucapan {
     max-height: 27rem;
     overflow-y: auto;
-    padding-right: 0.4rem;
 }
 
 .kartu-ucapan {
-    border-left: 3.5px solid var(--peach-accent) !important;
-    background: #ffffff;
-    border-radius: 0.75rem;
+    border-left: 0.25rem solid #c8583d;
 }
 
-/* Tombol Floating Musik */
+/* Tombol musik melayang */
 #btn-musik {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 3.2rem;
     height: 3.2rem;
     z-index: 1050;
     background-color: #ffffff;
-    color: var(--peach-dark);
-    border: 1.5px solid var(--peach-accent);
-    transition: all 0.3s ease;
+    color: #8c3826;
+    border: 1px solid #c8583d;
 }
 
-#btn-musik:hover {
-    background-color: var(--peach-light);
-    transform: scale(1.08);
+/* Footer */
+.footer-emas {
+    background-color: #fdf8f5;
+    border-top: 1px solid #f5d1c2;
 }

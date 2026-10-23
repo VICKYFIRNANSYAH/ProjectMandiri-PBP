@@ -63,15 +63,6 @@ function hitungMundur() {
 hitungMundur();
 setInterval(hitungMundur, 1000);
 
-// Salin nomor rekening atau kode pembayaran digital
-function salinRekening(label, nomor) {
-    if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(nomor);
-    }
-    const info = label.toUpperCase() === "NMID" ? "NMID: " : "Nomor rekening " + label + ": ";
-    alert(info + nomor + "\n(Berhasil disalin ke clipboard)");
-}
-
 // Data ucapan dan Buku Tamu
 // Array of object berisi ucapan tamu
 let daftarUcapan = [
@@ -87,7 +78,7 @@ function tampilkanUcapan() {
 
     daftarUcapan.forEach(item => {
         const kartu = document.createElement("div");
-        kartu.className = "card card-body mb-2 shadow-sm border-0 kartu-ucapan";
+        kartu.className = "card card-body mb-2 shadow-sm kartu-ucapan";
 
         const nama = document.createElement("strong");
         nama.className = "text-dark d-block mb-1";
